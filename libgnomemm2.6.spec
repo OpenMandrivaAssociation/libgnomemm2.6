@@ -1,7 +1,7 @@
-%define version 2.18.0
+%define version 2.20.0
 %define release %mkrel 1
 
-%define gtkmm_version 2.4.0
+%define gtkmm_version 2.8.0
 %define libgnome_version 2.6.0
 
 %define major 1
@@ -10,6 +10,7 @@
 %define api_version 2.6
 %define libname_orig	%mklibname gnomemm %api_version
 %define libname		%mklibname gnomemm %api_version %{major}
+%define develname %mklibname -d gnomemm %api_version
 
 Summary: 	A C++ wrapper for libgnome
 Name: 		%{pkgname}%{api_version}
@@ -41,15 +42,16 @@ It is a subpackage of the gnomemm project, which provides C++ binding
 of various GNOME libraries.
 
 
-%package -n %{libname}-devel
+%package -n %{develname}
 Summary:	Development files for libgnome C++ wrapper
 Group: 		Development/GNOME and GTK+
 Provides:	%name-devel = %{version}-%{release}
 Requires:	%{libname} = %{version}
 Requires:	gtkmm2.4-devel >= %{gtkmm_version}
 Requires:	libgnome2-devel >= %{libgnome_version}
+Obsoletes: %mklibname -d gnomemm %api_version %{major}
 
-%description -n %{libname}-devel
+%description -n %develname
 This package contains all necessary files, including libraries and headers,
 that C++ programmers will need to develop applications which use %{pkgname},
 the C++ interface to libgnome library.
@@ -85,9 +87,9 @@ rm -rf %{buildroot}
 %files -n %{libname}
 %defattr(-, root, root)
 %doc AUTHORS COPYING README
-%{_libdir}/lib*.so.*
+%{_libdir}/libgnomemm-%{api_version}.so.%{major}*
 
-%files -n %{libname}-devel
+%files -n %develname
 %defattr(-, root, root)
 %doc docs/reference/html COPYING ChangeLog NEWS
 %{_includedir}/*
