@@ -19,6 +19,7 @@ Release: 	%{release}
 License: 	LGPL
 Group: 		System/Libraries
 URL: 		http://gtkmm.sourceforge.net/
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source: 	http://ftp.gnome.org/pub/GNOME/sources/%{pkgname}/%{pkgname}-%{version}.tar.bz2
 BuildRequires:	gtkmm2.4-devel >= %{gtkmm_version}
 BuildRequires:	libgnome2-devel >= %{libgnome_version}
