@@ -1,5 +1,5 @@
 %define version 2.20.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define gtkmm_version 2.8.0
 %define libgnome_version 2.6.0
