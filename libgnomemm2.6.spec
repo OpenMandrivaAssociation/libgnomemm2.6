@@ -1,5 +1,5 @@
-%define version 2.20.0
-%define release %mkrel 2
+%define version 2.20.1
+%define release %mkrel 1
 
 %define gtkmm_version 2.8.0
 %define libgnome_version 2.6.0
@@ -91,7 +91,8 @@ rm -rf %{buildroot}
 
 %files -n %develname
 %defattr(-, root, root)
-%doc docs/reference/html COPYING ChangeLog NEWS
+%doc COPYING ChangeLog NEWS
+%doc %_datadir/gtk-doc/html/*
 %{_includedir}/*
 %{_libdir}/lib*.a
 %{_libdir}/lib*.la
