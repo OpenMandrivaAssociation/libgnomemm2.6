@@ -60,7 +60,6 @@ It is necessary when compiling applications which use %{pkgname} as well.
 
 %prep
 %setup -q -n %{pkgname}-%{version}
-touch configure
 
 %build
 %configure2_5x --enable-static
@@ -70,12 +69,6 @@ touch configure
 rm -rf %{buildroot}
 %makeinstall_std
 find %buildroot -name \*.la|xargs chmod 644
-
-### Build doc
-pushd docs/reference
-  perl -pi -e 's/^(HAVE_DOT.*=) YES/$1 NO/' Doxyfile
-  make all
-popd
 
 %post -n %{libname} -p /sbin/ldconfig
 %postun -n %{libname} -p /sbin/ldconfig
@@ -91,8 +84,7 @@ rm -rf %{buildroot}
 
 %files -n %develname
 %defattr(-, root, root)
-%doc COPYING ChangeLog NEWS
-%doc %_datadir/gtk-doc/html/*
+%doc COPYING ChangeLog NEWS docs/reference/html
 %{_includedir}/*
 %{_libdir}/lib*.a
 %{_libdir}/lib*.la
