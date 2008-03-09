@@ -1,4 +1,4 @@
-%define version 2.20.1
+%define version 2.22.0
 %define release %mkrel 1
 
 %define gtkmm_version 2.8.0
