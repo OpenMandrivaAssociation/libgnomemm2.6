@@ -9,7 +9,7 @@
 Summary:	A C++ wrapper for libgnome
 Name:		%{pkgname}%{api}
 Version:	2.30.0
-Release:	8
+Release:	9
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://gtkmm.sourceforge.net/
