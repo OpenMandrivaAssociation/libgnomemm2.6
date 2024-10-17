@@ -12,7 +12,7 @@ Version:	2.30.0
 Release:	14
 License:	LGPLv2+
 Group:		System/Libraries
-Url:		http://gtkmm.sourceforge.net/
+Url:		https://gtkmm.sourceforge.net/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnomemm/%{url_ver}/%{pkgname}-%{version}.tar.bz2
 BuildRequires:	doxygen
 BuildRequires:	pkgconfig(gtkmm-2.4)
